@@ -22,7 +22,7 @@ pincode int
 )
 
 insert into keys.address values (1,'mannford','oklahoma(OK)',74044),(2,'sidney','ohio(OH)',45365)
-
+insert into keys.address values(3,'bk pudur','kovai',00200)
 
 
 create table keys.employee(
@@ -69,4 +69,16 @@ update keys.address set address_id=3 where address_id=2
 
 delete from keys.address where address_id=3
 
+--on delete set default/on update set null
 
+alter table keys.employee drop constraint [FK__employee__addres__55009F39]
+alter table keys.employee drop column address_id
+alter table keys.employee add address_id int default 4 constraint FK__employee__address foreign key(address_id) references keys.address (address_id) on delete set default on update set null
+
+update keys.employee set address_id=1 where id=1
+update keys.employee set address_id=2 where id=2
+update keys.employee set address_id=3 where id=3
+
+delete from keys.address where address_id=2
+
+update keys.address set address_id=5 where pincode=200
