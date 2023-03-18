@@ -40,9 +40,9 @@ insert into keys.employee values(1,'john','developer',100,9025457758,123456789,'
 insert into keys.employee(id,name,designation,deptid,mobile1,street_address,address_id)values(2,'jamie','designer',101,9786657055,'214 dorley rd',2)
 insert into keys.employee values(3,'jack','developer',100,6383125860,362578951,'236 hinton rd',1)
 
-select * from keys.department
 select * from keys.address
-select * from  keys.employee
+select * from keys.department
+select * from keys.employee
 
 drop table keys.address
 drop table keys.department
@@ -67,4 +67,6 @@ alter table keys.employee add constraint FK__employee__address foreign key(addre
 
 update keys.address set address_id=3 where address_id=2
 
-delete 
+delete from keys.address where address_id=3
+
+
