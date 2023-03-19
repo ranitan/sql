@@ -21,7 +21,8 @@ state varchar(20),
 pincode int
 )
 
-insert into keys.address values (1,'mannford','oklahoma(OK)',74044),(2,'sidney','ohio(OH)',45365)
+insert into keys.address values (1,'mannford','oklahoma(OK)',74044),
+insert into keys.address values(2,'sidney','ohio(OH)',45365)
 insert into keys.address values(3,'bk pudur','kovai',00200)
 
 
@@ -79,6 +80,6 @@ update keys.employee set address_id=1 where id=1
 update keys.employee set address_id=2 where id=2
 update keys.employee set address_id=3 where id=3
 
-delete from keys.address where address_id=2
+delete from keys.address where address_id=1
 
-update keys.address set address_id=5 where pincode=200
+update keys.address set address_id=5 where pincode=45365
