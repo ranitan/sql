@@ -1,3 +1,4 @@
+use mydb
 create table student_11
 (
 s_id int,

@@ -64,3 +64,6 @@ select fname,lname,e_id,salary from training where fname=(select fname from trai
 -- 5   Write a SQL query to find those employees whose salary falls within the range of the smallest salary and 2500. Return all the fields.
 
 select * from training where salary >= (select min(salary) as minval from training) and salary<=25000
+
+
+
