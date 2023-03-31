@@ -31,7 +31,7 @@ id int primary key,
 customer_name varchar(255),
 city_id int references city(id),
 customer_address varchar(255),
-next_call_date date not null,
+next_call_date date null,
 ts_inserted datetime
 )
 
@@ -40,6 +40,8 @@ id int primary key,
 employee_id int references employee(id),
 customer_id int references customer(id),
 start_time datetime,
-end_time datetime not null,
-call_outcome_id int not null references call_outcome(id)
+end_time datetime null,
+call_outcome_id int null references call_outcome(id)
 )
+
+
